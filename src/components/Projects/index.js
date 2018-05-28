@@ -10,13 +10,24 @@ class Projects extends Component {
     componentDidMount() {
         this.props.getProjects
     }
+
+    handleEditClick(id) {
+        console.log(id);
+    }
+
+    handleRemoveClick(id) {
+        console.log(id);
+    }
     
     renderList = (row) => {
         return(
-            <tr key = {row.id}>
+            <tr key = {row.id} className = 'tableRow'>
                 <td>{row.id}</td>
                 <td>{row.description}</td>
-                <td><i class="far fa-edit"></i><i class="fas fa-trash"></i></td>
+                <td className = 'buttonCell'>
+                    <button  title = 'Edit project' className = 'button' onClick = {id => this.handleEditClick(row.id)} ><i class="far fa-edit"></i></button>
+                    <button title = 'Remove project' className = 'button' onClick = {id => this.handleRemoveClick(row.id)}><i class="fas fa-trash"></i></button>
+                </td>
             </tr>
         )
     }

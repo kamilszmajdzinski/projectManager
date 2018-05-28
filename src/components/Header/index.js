@@ -9,7 +9,7 @@ const Header = () => {
       <div className ='menu'>
         <Link to = '/projects' className = 'link'> Active Projects </Link>
         <Link to = '/addProject' className = 'link'> Add new project</Link>
-        <Link to = '/' className = 'link'> <i class="fas fa-sign-out-alt" ></i>Sign out</Link>
+        <Link to = '/' className = 'link'> <i class="fas fa-sign-out-alt" ></i> Sign out</Link>
      </div>
     </div>
   )
