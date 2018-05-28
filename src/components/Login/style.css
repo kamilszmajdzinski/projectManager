@@ -1,0 +1,103 @@
+.loginContainer {
+    width: 30%;
+    height : 45%;
+    background-color: white;
+    
+    -webkit-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.75);
+    max-height: 300px;
+    min-height: 300px;
+}
+
+.signIn {
+    height: 20%;
+    background-color: #2C3E50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signIn p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.formDiv{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formDiv *{
+    display: block;
+    width: 90%;
+}
+
+.form{
+    
+    color: #2C3E50;
+}
+
+.form input{
+    margin-top: 0.5em;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    height: 2em;
+    padding-left: 0.5em;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    border: none;
+    border-bottom: 1px solid #2C3E50;
+    outline: none;
+    transition: 1s ease;
+}
+
+.form input:focus{
+    border: 1px solid #2980B9;
+}
+
+.form button {
+    width: 100%;
+    height: 3em;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #2C3E50;
+    background-color: white;
+    
+    transition: 0.5s ease;
+}
+
+.form button:hover {
+    background-color: #2980B9;
+    color: white;
+}
+
+.errorMessage {
+    margin: 0 auto;
+    color: #E74C3C;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    
+}
+
+
+@media only screen and (max-width: 900px) {
+    .loginContainer {
+        width: 40%;
+        height : 40%;
+        
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .loginContainer {
+        width: 80%;
+        height : 40%;
+        
+    }
+}
