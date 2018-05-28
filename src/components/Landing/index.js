@@ -6,8 +6,6 @@ import { connect } from "react-redux";
 
 class Landing extends Component {
   render() {
-    console.log(this.props.isAuth);
-    
     return (
       !this.props.isAuth ? 
       (

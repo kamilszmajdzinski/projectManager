@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import Header from '../Header'
+import './style.css'
 
 export default class Projects extends Component {
   render() {
     return (
-      <div>
-        <h1>zalogowano</h1>
+        
+      <div className = 'projects'>
+          <Header />
+        <h1>Active projects</h1>
       </div>
     )
   }

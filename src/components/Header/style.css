@@ -1,0 +1,42 @@
+.header {
+    background-color: #003459;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header *{
+    color: white;
+}
+
+.header p {
+    margin-left: 1em;
+    font-size: 1.5em;
+}
+
+.link {
+    margin: 1em;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.link:hover{
+    color: #00A8E8;
+}
+
+@media only screen and (max-width: 600px) {
+    .header p {
+        margin-left: 0.5em;
+        font-size: 1em;
+    }
+
+    .link {
+        margin: 0.2em;
+    }
+
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
+}
