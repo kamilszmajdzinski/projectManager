@@ -38,6 +38,7 @@ th {
 .button {
     border: none;
     background-color: #ECF0F1;
+    
 }
 
 .button:nth-of-type(2){
@@ -49,6 +50,7 @@ th {
     box-sizing: border-box;
     background-color: #ECF0F1;
     color: #003459;
+    cursor: pointer;
     
 }
 
@@ -65,4 +67,17 @@ tbody > tr:nth-of-type(2) {
 
 tbody > tr:hover {
     background-color: rgba(0,126,167, 0.1)
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    .buttonCell {
+        display: table-cell;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
 }

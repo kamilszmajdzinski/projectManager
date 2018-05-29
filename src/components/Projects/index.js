@@ -7,23 +7,31 @@ import { getProjects } from '../../actions/data-actions'
 
 class Projects extends Component {
 
-    componentDidMount() {
-        this.props.getProjects
+    componentDidMount = () => {
+      this.props.getProjects()
     }
+    
 
     handleEditClick(id) {
         console.log(id);
     }
 
     handleRemoveClick(id) {
-        console.log(id);
+        
+        for(var i = 0; i < this.props.activeProjects.length; i++) {
+            
+            if (this.props.activeProjects[i].id === id) {
+                this.props.activeProjects.splice(i, 1)
+                this.props.updateProjects(this.props.activeProjects)
+            }
+        }
     }
     
     renderList = (row) => {
         return(
             <tr key = {row.id} className = 'tableRow'>
                 <td>{row.id}</td>
-                <td>{row.description}</td>
+                <td>{row.title}</td>
                 <td className = 'buttonCell'>
                     <button  title = 'Edit project' className = 'button' onClick = {id => this.handleEditClick(row.id)} ><i class="far fa-edit"></i></button>
                     <button title = 'Remove project' className = 'button' onClick = {id => this.handleRemoveClick(row.id)}><i class="fas fa-trash"></i></button>
@@ -33,6 +41,7 @@ class Projects extends Component {
     }
 
   render() {
+   
     return (
       <div className = 'projects'>
           <Header />
