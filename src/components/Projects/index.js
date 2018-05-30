@@ -4,8 +4,14 @@ import './style.css'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getProjects, deleteProject } from '../../actions/data-actions'
+import Modal from "react-responsive-modal";
 
 class Projects extends Component {
+
+    state = {
+        deleteConfirmation: false,
+        deleteProjectId: null
+    }
 
     componentDidMount = () => {
       this.props.getProjects()
@@ -13,13 +19,21 @@ class Projects extends Component {
       
     }
     
+    closeModal = () => {
+        this.setState({ deleteConfirmation: false })
+    }
 
     handleEditClick(id) {
         console.log(id);
     }
 
+    confirmDelete = () => {
+        this.setState({ deleteConfirmation: false })
+        this.props.deleteProject(this.state.deleteProjectId)
+    }
+
     handleRemoveClick(id) {
-        this.props.deleteProject(id)
+        this.setState({ deleteConfirmation: true, deleteProjectId: id })
     }
     
     renderList = (row) => {
@@ -42,6 +56,20 @@ class Projects extends Component {
           <Header />
         <h1>Active projects</h1>
         <div className = 'tableContainer'>
+        {this.state.deleteConfirmation ?
+        (
+            <Modal
+                open={this.state.deleteConfirmation}
+                onClose={this.closeModal}
+                little
+            >
+                <div className = 'modalDiv'>
+                    <p>Do you want to delete project?</p>
+                    <button onClick = {this.confirmDelete}>Yes</button>
+                    <button onClick = {this.closeModal}>Cancel</button>
+                </div>
+            </Modal>
+        ):(
             <table>
                 <thead>
                     <tr>
@@ -54,6 +82,8 @@ class Projects extends Component {
                     {activeProjects && activeProjects.map(row => this.renderList(row))}
                 </tbody>
             </table>
+        )
+        } 
         </div>
       </div>
     )
