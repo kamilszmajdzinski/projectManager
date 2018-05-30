@@ -9,6 +9,8 @@ class Projects extends Component {
 
     componentDidMount = () => {
       this.props.getProjects()
+      console.log('cdm');
+      
     }
     
 
@@ -34,7 +36,7 @@ class Projects extends Component {
     }
 
   render() {
-   
+   const { activeProjects } = this.props
     return (
       <div className = 'projects'>
           <Header />
@@ -49,7 +51,7 @@ class Projects extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.props.activeProjects.map(row => this.renderList(row))}
+                    {activeProjects && activeProjects.map(row => this.renderList(row))}
                 </tbody>
             </table>
         </div>

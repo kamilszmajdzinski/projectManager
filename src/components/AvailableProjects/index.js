@@ -39,7 +39,6 @@ render(){
 
     if (this.state.toProjects) {
         console.log('wszedłem');
-        
         this.props.history.push('/projects')
     }
 

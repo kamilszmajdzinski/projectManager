@@ -42,6 +42,6 @@ export const deleteProject = (id) => {
         }
     }
     return dispatch => {
-        dispatch({ type: DELETE_PROJECT })
+        dispatch({ type: DELETE_PROJECT, activeProjects })
     }
 }

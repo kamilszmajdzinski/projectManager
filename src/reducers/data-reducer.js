@@ -3,11 +3,8 @@ import { LOGIN_USER, GET_PROJECTS, ADD_PROJECT, GET_AVAILABLE_PROJECTS, DELETE_P
 import { activeProjects } from "../actions/data-actions";
 
 const initialState = {
-    isAuth: false,
-    activeProjects: []
+    isAuth: false
 }
-
-
 
 export default function dataReducer(state = initialState, action) {
     switch (action.type) {
@@ -33,6 +30,7 @@ export default function dataReducer(state = initialState, action) {
         case DELETE_PROJECT:
             return{
                 ...state,
+                activeProjects: action.activeProjects
             }
         default:
             return state;
