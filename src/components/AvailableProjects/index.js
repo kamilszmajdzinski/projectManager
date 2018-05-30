@@ -8,6 +8,10 @@ import { Redirect } from "react-router-dom";
 
 class AvailableProjects extends Component {
 
+state = {
+    toProjects: false
+}
+
 componentDidMount() {
     this.props.getAvailableProjects()
 }
@@ -15,7 +19,7 @@ componentDidMount() {
 
 handleAddClick(project){
     this.props.addProject(project);
-   return <Redirect to = '/projects' />
+    this.setState({ toProjects: true })
 }
 
 renderList = (row) => {
@@ -32,6 +36,13 @@ renderList = (row) => {
 
 render(){
     const { availableProjects } = this.props
+
+    if (this.state.toProjects) {
+        console.log('wszedłem');
+        
+        this.props.history.push('/projects')
+    }
+
   return (
     <div className = 'availableProjects'>
       <Header />

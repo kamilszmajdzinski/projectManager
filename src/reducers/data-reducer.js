@@ -1,4 +1,4 @@
-import { LOGIN_USER, GET_PROJECTS, ADD_PROJECT, GET_AVAILABLE_PROJECTS } from "../actions/data-actions";
+import { LOGIN_USER, GET_PROJECTS, ADD_PROJECT, GET_AVAILABLE_PROJECTS, DELETE_PROJECT } from "../actions/data-actions";
 
 import { activeProjects } from "../actions/data-actions";
 
@@ -27,6 +27,10 @@ export default function dataReducer(state = initialState, action) {
                 activeProjects
             }
         case GET_PROJECTS: 
+            return{
+                ...state,
+            }
+        case DELETE_PROJECT:
             return{
                 ...state,
             }

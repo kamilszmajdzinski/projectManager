@@ -3,7 +3,7 @@ import Header from '../Header'
 import './style.css'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getProjects } from '../../actions/data-actions'
+import { getProjects, deleteProject } from '../../actions/data-actions'
 
 class Projects extends Component {
 
@@ -17,14 +17,7 @@ class Projects extends Component {
     }
 
     handleRemoveClick(id) {
-        
-        for(var i = 0; i < this.props.activeProjects.length; i++) {
-            
-            if (this.props.activeProjects[i].id === id) {
-                this.props.activeProjects.splice(i, 1)
-                this.props.updateProjects(this.props.activeProjects)
-            }
-        }
+        this.props.deleteProject(id)
     }
     
     renderList = (row) => {
@@ -73,7 +66,8 @@ const mapStateToProps = ({ data }) => {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        getProjects
+        getProjects,
+        deleteProject
     }, dispatch)
 }
 
