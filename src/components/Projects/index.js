@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getProjects, deleteProject } from '../../actions/data-actions'
 import Modal from "react-responsive-modal";
+import { Redirect, withRouter } from "react-router-dom";
 
 class Projects extends Component {
 
@@ -25,6 +26,7 @@ class Projects extends Component {
 
     handleEditClick(id) {
         console.log(id);
+        this.props.history.push(`projects/${id}`)
     }
 
     confirmDelete = () => {
