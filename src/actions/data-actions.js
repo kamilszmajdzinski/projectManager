@@ -3,11 +3,18 @@ export const LOGIN_USER = 'LOGIN_USER'
 export const GET_PROJECTS = 'GET_PROJECTS'
 export const ADD_PROJECT = 'ADD_PROJECT'
 export const GET_AVAILABLE_PROJECTS = 'GET_AVAILABLE_PROJECTS'
+export const LOGOUT_USER = 'LOGOUT_USER'
 export const activeProjects = []
 
 export const loginUser = () => {
     return dispatch => {
         dispatch({ type: LOGIN_USER });
+    }
+}
+
+export const logoutUser = () => {
+    return dispatch => {
+        dispatch({ type: LOGOUT_USER })
     }
 }
 
