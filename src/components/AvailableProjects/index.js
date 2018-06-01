@@ -4,7 +4,7 @@ import './style.css'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { getAvailableProjects, addProject } from "../../actions/data-actions";
-import { Redirect } from "react-router-dom";
+
 
 class AvailableProjects extends Component {
 

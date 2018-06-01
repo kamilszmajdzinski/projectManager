@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import Landing from "./components/Landing";
 import Projects from './components/Projects'
 import AvailableProjects from './components/AvailableProjects'
-import EditProject from './components/EditProject'
-import logo from './logo.svg';
+
+
 
 
 export default class App extends Component {
@@ -12,10 +12,11 @@ export default class App extends Component {
     return (
       <div>
         <main>
-          <Route exact path = '/' component = {Landing} />
-          <Route exact path = '/projects' component = {Projects} />
-          <Route exact path = '/projects/:id' component = {EditProject} />
-          <Route exact path = '/addProject' component = {AvailableProjects} />
+          <Switch>
+            <Route exact path = '/' component = {Landing} />
+            <Route exact path = '/projects' component = {Projects} />
+            <Route exact path = '/addProject' component = {AvailableProjects} />
+          </Switch>
         </main>
       </div>
     )
